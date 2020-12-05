@@ -15,6 +15,8 @@ import {PrescriptionService} from './prescription.service';
 import { DeletePrescriptionComponent } from './delete-prescription/delete-prescription.component';
 import { FindPrescriptionComponent } from './find-prescription/find-prescription.component';
 import { AllPrescriptionComponent } from './all-prescription/all-prescription.component';
+import { UpdatePrescriptionComponent } from './update-prescription/update-prescription.component';
+import { PrescriptionUpdateInfoComponent } from './prescription-update-info/prescription-update-info.component';
 
 @NgModule({
   declarations: [
@@ -25,6 +27,8 @@ import { AllPrescriptionComponent } from './all-prescription/all-prescription.co
     DeletePrescriptionComponent,
     FindPrescriptionComponent,
     AllPrescriptionComponent,
+    UpdatePrescriptionComponent,
+    PrescriptionUpdateInfoComponent,
   ],
   imports: [
     BrowserModule,

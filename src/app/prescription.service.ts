@@ -34,13 +34,14 @@ export class PrescriptionService {
     location.reload();
   }
 
-  // tslint:disable-next-line:typedef
+  // tslint:disable-next-line:typedef max-line-length
   updatePrescription(id: string, patient: string, prescription: string, dosage: number, usageInterval: number, pharmacy: string, manufacturer: string, presidingDoctor: string) {
+    // tslint:disable-next-line:max-line-length
     this.http.put('http://localhost:3000/api/v1/prescription/update/' + id, {patient, prescription, dosage, usageInterval, pharmacy, manufacturer, presidingDoctor})
       .subscribe(() => {
         console.log(`Updated: ${id}`);
       });
-    location.reload();
+    location.assign('prescription/update');
   }
 
   // tslint:disable-next-line:typedef
