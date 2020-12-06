@@ -11,6 +11,7 @@ import {DoctorComponent} from './doctor/doctor.component';
 import {AddDoctorComponent} from './add-doctor/add-doctor.component';
 import {FindDoctorComponent} from './find-doctor/find-doctor.component';
 import {DeleteDoctorComponent} from './delete-doctor/delete-doctor.component';
+import {AllDoctorsComponent} from './all-doctors/all-doctors.component';
 
 const routes: Routes = [
   {path: 'prescription', component: PrescriptionComponent, children: [
@@ -27,6 +28,7 @@ const routes: Routes = [
       {path: 'add', component: AddDoctorComponent},
       {path: 'find', component: FindDoctorComponent},
       {path: 'delete', component: DeleteDoctorComponent},
+      {path: 'all', component: AllDoctorsComponent},
     ]},
 ];
 

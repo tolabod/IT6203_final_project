@@ -13,7 +13,7 @@ export class AddDoctorComponent implements OnInit {
   @Input() lastName: string;
   @Input() city: string;
   @Input() specialty: string;
-  @Input() phone: string;
+  @Input() phoneNumber: string;
 
   // tslint:disable-next-line:typedef
   ngOnInit() {
@@ -21,6 +21,6 @@ export class AddDoctorComponent implements OnInit {
 
   // tslint:disable-next-line:typedef
   addDoctor() {
-    this.doctorService.addDoctors(this.firstName, this.lastName, this.phone, this.city, this.specialty)
+    this.doctorService.addDoctors(this.firstName, this.lastName, this.phoneNumber, this.city, this.specialty);
   }
 }

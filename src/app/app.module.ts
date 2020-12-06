@@ -22,6 +22,7 @@ import { AddDoctorComponent } from './add-doctor/add-doctor.component';
 import {DoctorService} from './doctor.service';
 import { FindDoctorComponent } from './find-doctor/find-doctor.component';
 import { DeleteDoctorComponent } from './delete-doctor/delete-doctor.component';
+import { AllDoctorsComponent } from './all-doctors/all-doctors.component';
 
 @NgModule({
   declarations: [
@@ -38,6 +39,7 @@ import { DeleteDoctorComponent } from './delete-doctor/delete-doctor.component';
     AddDoctorComponent,
     FindDoctorComponent,
     DeleteDoctorComponent,
+    AllDoctorsComponent,
   ],
   imports: [
     BrowserModule,
