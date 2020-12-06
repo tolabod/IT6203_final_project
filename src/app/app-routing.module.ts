@@ -17,6 +17,7 @@ import {DoctorInfoUpdateComponent} from './doctor-info-update/doctor-info-update
 import {NotificationComponent} from './notification/notification.component';
 import {AddNotificationComponent} from './add-notification/add-notification.component';
 import {AllNotificationComponent} from './all-notification/all-notification.component';
+import {DeleteNotificationComponent} from './delete-notification/delete-notification.component';
 
 const routes: Routes = [
   {path: 'prescription', component: PrescriptionComponent, children: [
@@ -42,6 +43,7 @@ const routes: Routes = [
   {path: 'notification', component: NotificationComponent, children: [
       {path: 'add', component: AddNotificationComponent},
       {path: 'all', component: AllNotificationComponent},
+      {path: 'delete', component: DeleteNotificationComponent},
     ]},
 ];
 

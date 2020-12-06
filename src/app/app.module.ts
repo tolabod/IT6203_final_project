@@ -30,6 +30,8 @@ import { AddNotificationComponent } from './add-notification/add-notification.co
 import {MatInputModule} from '@angular/material/input';
 import {NotificationService} from './notification.service';
 import { AllNotificationComponent } from './all-notification/all-notification.component';
+import { DeleteNotificationComponent } from './delete-notification/delete-notification.component';
+import { UpdateNotificationComponent } from './update-notification/update-notification.component';
 
 @NgModule({
   declarations: [
@@ -52,6 +54,8 @@ import { AllNotificationComponent } from './all-notification/all-notification.co
     NotificationComponent,
     AddNotificationComponent,
     AllNotificationComponent,
+    DeleteNotificationComponent,
+    UpdateNotificationComponent,
   ],
   imports: [
     BrowserModule,

@@ -1,7 +1,7 @@
 <div class="w-100 d-flex flex-column">
 
   <div class="d-flex w-100 align-items-center justify-content-center mb-4">
-    <h4 class="h4 text-uppercase mb-4 text-info font-weight-bold font-italic">All notification</h4>
+    <h4 class="h4 text-uppercase mb-4 text-danger font-weight-bold font-italic">delete notification</h4>
   </div>
 
   <table class="table w-100">
@@ -16,6 +16,7 @@
       <th scope="col" class="text-capitalize">enabled</th>
       <th scope="col" class="text-capitalize">date</th>
       <th scope="col" class="text-capitalize">Physician</th>
+      <th scope="col" class="text-capitalize">Action</th>
     </tr>
     </thead>
     <tbody>
@@ -29,6 +30,7 @@
       <td>{{notificationList.enableNotification}}</td>
       <td>{{notificationList.date}}</td>
       <td>{{notificationList.doctor}}</td>
+      <button class="btn btn-danger text-capitalize m-1" (click)="deleteNotification(notificationList._id)">delete</button>
     </tr>
     </tbody>
   </table>
