@@ -17,6 +17,11 @@ import { FindPrescriptionComponent } from './find-prescription/find-prescription
 import { AllPrescriptionComponent } from './all-prescription/all-prescription.component';
 import { UpdatePrescriptionComponent } from './update-prescription/update-prescription.component';
 import { PrescriptionUpdateInfoComponent } from './prescription-update-info/prescription-update-info.component';
+import { DoctorComponent } from './doctor/doctor.component';
+import { AddDoctorComponent } from './add-doctor/add-doctor.component';
+import {DoctorService} from './doctor.service';
+import { FindDoctorComponent } from './find-doctor/find-doctor.component';
+import { DeleteDoctorComponent } from './delete-doctor/delete-doctor.component';
 
 @NgModule({
   declarations: [
@@ -29,6 +34,10 @@ import { PrescriptionUpdateInfoComponent } from './prescription-update-info/pres
     AllPrescriptionComponent,
     UpdatePrescriptionComponent,
     PrescriptionUpdateInfoComponent,
+    DoctorComponent,
+    AddDoctorComponent,
+    FindDoctorComponent,
+    DeleteDoctorComponent,
   ],
   imports: [
     BrowserModule,
@@ -40,7 +49,10 @@ import { PrescriptionUpdateInfoComponent } from './prescription-update-info/pres
     HttpClientModule,
     FormsModule
   ],
-  providers: [PrescriptionService],
+  providers: [
+    PrescriptionService,
+    DoctorService,
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,0 +1,30 @@
+<div class="w-100 d-flex flex-column">
+
+  <div class="d-flex w-100 align-items-center justify-content-center mb-4">
+    <h4 class="h4 text-uppercase mb-4 text-danger font-weight-bold font-italic">delete doctor</h4>
+  </div>
+
+  <table class="table w-100">
+    <thead>
+    <tr>
+      <th scope="col" class="text-capitalize">first name</th>
+      <th scope="col" class="text-capitalize">last name</th>
+      <th scope="col" class="text-capitalize">City</th>
+      <th scope="col" class="text-capitalize">Speciality</th>
+      <th scope="col" class="text-capitalize">Contact</th>
+      <th scope="col" class="text-capitalize">Action</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let doctorList of doctor let i = index">
+      <th scope="row">{{i + 1}}</th>
+      <td>{{doctorList.firstName}}</td>
+      <td>{{doctorList.lastName}}</td>
+      <td>{{doctorList.city}}</td>
+      <td>{{doctorList.specialty}}</td>
+      <td>{{doctorList.phone}}</td>
+      <button class="btn btn-danger text-capitalize m-1" (click)="deleteDoctor(doctorList._id)">delete</button>
+    </tr>
+    </tbody>
+  </table>
+</div>

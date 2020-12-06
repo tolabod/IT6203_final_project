@@ -1,0 +1,40 @@
+<!--<p>find-patient works!</p>-->
+
+<div class="d-flex flex-column w-100">
+  <div class="d-flex w-100">
+    <nav class="navbar navbar-light bg-light w-100">
+      <form class="form-inline w-100" (submit)="findDoctor()">
+        <input class="form-control mr-sm-2" type="search" autocomplete="off" [(ngModel)]="searchDoctor" name="searchPatient" placeholder="Find Doctor" aria-label="Search">
+        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+      </form>
+    </nav>
+  </div>
+
+  <div class="d-flex flex-column">
+    <div class="d-flex w-100 align-items-center justify-content-center mb-4">
+      <h4 class="h4 text-uppercase mb-4 text-info font-weight-bold font-italic mt-4">Find Doctor</h4>
+    </div>
+
+    <table class="table w-100">
+      <thead>
+      <tr>
+        <th scope="col" class="text-capitalize">first name</th>
+        <th scope="col" class="text-capitalize">last name</th>
+        <th scope="col" class="text-capitalize">City</th>
+        <th scope="col" class="text-capitalize">Speciality</th>
+        <th scope="col" class="text-capitalize">Contact</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let doctorList of doctor let i = index">
+        <th scope="row">{{i + 1}}</th>
+        <td>{{doctorList.firstName}}</td>
+        <td>{{doctorList.lastName}}</td>
+        <td>{{doctorList.city}}</td>
+        <td>{{doctorList.specialty}}</td>
+        <td>{{doctorList.phone}}</td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
