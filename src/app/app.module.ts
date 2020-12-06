@@ -32,6 +32,14 @@ import {NotificationService} from './notification.service';
 import { AllNotificationComponent } from './all-notification/all-notification.component';
 import { DeleteNotificationComponent } from './delete-notification/delete-notification.component';
 import { UpdateNotificationComponent } from './update-notification/update-notification.component';
+import { UpdateNotificationInfoComponent } from './update-notification-info/update-notification-info.component';
+import { AppointmentComponent } from './appointment/appointment.component';
+import {AppointmentServices} from './appointment.service';
+import { AddAppointmentComponent } from './add-appointment/add-appointment.component';
+import { AllAppointmentsComponent } from './all-appointments/all-appointments.component';
+import { DeleteAppointmentsComponent } from './delete-appointments/delete-appointments.component';
+import { UpdateAppointmentComponent } from './update-appointment/update-appointment.component';
+import { UpdateAppointmentInfoComponent } from './update-appointment-info/update-appointment-info.component';
 
 @NgModule({
   declarations: [
@@ -56,6 +64,13 @@ import { UpdateNotificationComponent } from './update-notification/update-notifi
     AllNotificationComponent,
     DeleteNotificationComponent,
     UpdateNotificationComponent,
+    UpdateNotificationInfoComponent,
+    AppointmentComponent,
+    AddAppointmentComponent,
+    AllAppointmentsComponent,
+    DeleteAppointmentsComponent,
+    UpdateAppointmentComponent,
+    UpdateAppointmentInfoComponent,
   ],
   imports: [
     BrowserModule,
@@ -71,7 +86,8 @@ import { UpdateNotificationComponent } from './update-notification/update-notifi
   providers: [
     PrescriptionService,
     DoctorService,
-    NotificationService
+    NotificationService,
+    AppointmentServices,
   ],
   bootstrap: [AppComponent]
 })

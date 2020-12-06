@@ -18,6 +18,14 @@ import {NotificationComponent} from './notification/notification.component';
 import {AddNotificationComponent} from './add-notification/add-notification.component';
 import {AllNotificationComponent} from './all-notification/all-notification.component';
 import {DeleteNotificationComponent} from './delete-notification/delete-notification.component';
+import {UpdateNotificationComponent} from './update-notification/update-notification.component';
+import {UpdateNotificationInfoComponent} from './update-notification-info/update-notification-info.component';
+import {AppointmentComponent} from './appointment/appointment.component';
+import {AddAppointmentComponent} from './add-appointment/add-appointment.component';
+import {AllAppointmentsComponent} from './all-appointments/all-appointments.component';
+import {DeleteAppointmentsComponent} from './delete-appointments/delete-appointments.component';
+import {UpdateAppointmentComponent} from './update-appointment/update-appointment.component';
+import {UpdateAppointmentInfoComponent} from './update-appointment-info/update-appointment-info.component';
 
 const routes: Routes = [
   {path: 'prescription', component: PrescriptionComponent, children: [
@@ -44,6 +52,18 @@ const routes: Routes = [
       {path: 'add', component: AddNotificationComponent},
       {path: 'all', component: AllNotificationComponent},
       {path: 'delete', component: DeleteNotificationComponent},
+      {path: 'update', component: UpdateNotificationComponent, children: [
+          {path: 'info/:_id', component: UpdateNotificationInfoComponent},
+        ]},
+    ]},
+
+  {path: 'appointment', component: AppointmentComponent, children: [
+      {path: 'add', component: AddAppointmentComponent},
+      {path: 'all', component: AllAppointmentsComponent},
+      {path: 'delete', component: DeleteAppointmentsComponent},
+      {path: 'update', component: UpdateAppointmentComponent, children: [
+          {path: 'info/:_id', component: UpdateAppointmentInfoComponent},
+        ]},
     ]},
 ];
 

@@ -1,1 +1,39 @@
-<p>update-notification works!</p>
+<div class="w-100 d-flex flex-column">
+
+  <div id="hide-div" class="d-flex w-100 align-items-center justify-content-center mb-4">
+    <h4 class="h4 text-uppercase mb-4 text-warning font-weight-bold font-italic">update notification information</h4>
+  </div>
+
+  <table id="hide-table" class="table w-100">
+    <thead>
+    <tr>
+      <th scope="col" class="text-capitalize">index</th>
+      <th scope="col" class="text-capitalize">first name</th>
+      <th scope="col" class="text-capitalize">last name</th>
+      <th scope="col" class="text-capitalize">email</th>
+      <th scope="col" class="text-capitalize">contact</th>
+      <th scope="col" class="text-capitalize">type</th>
+      <th scope="col" class="text-capitalize">enabled</th>
+      <th scope="col" class="text-capitalize">date</th>
+      <th scope="col" class="text-capitalize">Physician</th>
+      <th scope="col" class="text-capitalize">Action</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let notificationList of notification let i = index">
+      <th scope="row">{{i + 1}}</th>
+      <td>{{notificationList.firstName}}</td>
+      <td>{{notificationList.lastName}}</td>
+      <td>{{notificationList.email}}</td>
+      <td>{{notificationList.phoneNumber}}</td>
+      <td>{{notificationList.type}}</td>
+      <td>{{notificationList.enableNotification}}</td>
+      <td>{{notificationList.date}}</td>
+      <td>{{notificationList.doctor}}</td>
+      <button class="btn btn-warning m-1" (click)="hideList()" [routerLink]="['info', notificationList._id]">Update</button>
+    </tr>
+    </tbody>
+  </table>
+</div>
+
+<router-outlet></router-outlet>

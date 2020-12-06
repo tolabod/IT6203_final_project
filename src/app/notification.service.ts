@@ -35,7 +35,7 @@ export class NotificationService {
   }
 
   // tslint:disable-next-line:typedef max-line-length
-  updatePrescription(id: string, firstName: string, lastName: string, type: string, date: string, enableNotification: boolean, phoneNumber: string, email: string, doctor: string) {
+  updateNotification(id: string, firstName: string, lastName: string, type: string, date: string, enableNotification: boolean, phoneNumber: string, email: string, doctor: string) {
     // tslint:disable-next-line:max-line-length
     this.http.put('http://localhost:3000/api/v1/notification/update/' + id, {firstName, lastName, type, date, enableNotification, phoneNumber, email, doctor})
       .subscribe(() => {

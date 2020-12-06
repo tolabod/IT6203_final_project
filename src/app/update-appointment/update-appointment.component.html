@@ -1,0 +1,41 @@
+<div class="w-100 d-flex flex-column">
+
+  <div id="hide-div" class="d-flex w-100 align-items-center justify-content-center mb-4">
+    <h4 class="h4 text-uppercase mb-4 text-warning font-weight-bold font-italic">update appointment</h4>
+  </div>
+
+  <table id="hide-table" class="table w-100">
+    <thead>
+    <tr>
+      <th scope="col" class="text-capitalize">index</th>
+      <th scope="col" class="text-capitalize">first name</th>
+      <th scope="col" class="text-capitalize">last name</th>
+      <th scope="col" class="text-capitalize">email</th>
+      <th scope="col" class="text-capitalize">Phone</th>
+      <th scope="col" class="text-capitalize">date</th>
+      <th scope="col" class="text-capitalize">physician availability</th>
+      <th scope="col" class="text-capitalize">type</th>
+      <th scope="col" class="text-capitalize">duration</th>
+      <th scope="col" class="text-capitalize">Physician</th>
+      <th scope="col" class="text-capitalize">Action</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let appointmentItem of appointment let i = index">
+      <th scope="row">{{i + 1}}</th>
+      <td>{{appointmentItem.firstName}}</td>
+      <td>{{appointmentItem.lastName}}</td>
+      <td>{{appointmentItem.email}}</td>
+      <td>{{appointmentItem.phoneNumber}}</td>
+      <td>{{appointmentItem.date}}</td>
+      <td>{{appointmentItem.physicianAvailability}}</td>
+      <td>{{appointmentItem.type}}</td>
+      <td>{{appointmentItem.duration}}</td>
+      <td>{{appointmentItem.doctor}}</td>
+      <button class="btn btn-warning m-1" (click)="hideList()" [routerLink]="['info', appointmentItem._id]">Update</button>
+    </tr>
+    </tbody>
+  </table>
+</div>
+
+<router-outlet></router-outlet>

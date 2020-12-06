@@ -5,6 +5,7 @@ const app = express();
 const Patient = require('./Model/Patient');
 const Doctor = require('./Model/doctor');
 const Notification = require('./Model/notification');
+const Appointment = require('./Model/appointment');
 
 //Connect to MongoDB
 const mongoose = require('mongoose');
@@ -228,7 +229,7 @@ app.put(baseAPI + 'notification/update/:id', (req, res, next) => {
   console.log("ID:" + req.params.id)
 
   if (mongoose.isValidObjectId(req.params.id)) {
-    Patient.findOneAndUpdate({_id: req.params.id},
+    Notification.findOneAndUpdate({_id: req.params.id},
       {$set: {
           firstName: req.body.firstName,
           lastName: req.body.lastName,
@@ -254,4 +255,82 @@ app.put(baseAPI + 'notification/update/:id', (req, res, next) => {
     console.log("Invalid Id")
   }
 })
+
+// NOTIFICATION END
+
+
+
+// APPOINTMENT START
+app.post(baseAPI + "appointment/add", (req, res) => {
+  const appointment = new Appointment({
+    firstName: req.body.firstName,
+    lastName: req.body.lastName,
+    type: req.body.type,
+    duration: req.body.duration,
+    physicianAvailability: req.body.physicianAvailability,
+    date: req.body.date,
+    phoneNumber: req.body.phoneNumber,
+    email: req.body.email,
+    doctor: req.body.doctor
+  });
+
+
+  appointment.save()
+    .then(() => console.log('Successfully Added new Notification'))
+    .catch(err => console.log(err))
+});
+
+app.get(baseAPI + "appointment/get", (req, res) => {
+  Appointment.find()
+    //if data is returned, send data as a response
+    .then(data => res.status(200).json(data))
+    //if error, send internal server error
+    .catch(err => {
+      console.log('Error: ${err}');
+      res.status(500).json(err);
+    });
+});
+
+app.delete(baseAPI + 'appointment/delete/:id', (req, res, next) => {
+  // console.log("AM HERE")
+  Appointment.deleteOne({ _id: req.params.id })
+    .then(result => {
+      console.log(result);
+      res.status(200).json("Deleted!");
+    })
+})
+
+app.put(baseAPI + 'appointment/update/:id', (req, res, next) => {
+  // Patient.update
+  console.log("ID:" + req.params.id)
+
+  if (mongoose.isValidObjectId(req.params.id)) {
+    Appointment.findOneAndUpdate({_id: req.params.id},
+      {$set: {
+          firstName: req.body.firstName,
+          lastName: req.body.lastName,
+          type: req.body.type,
+          duration: req.body.duration,
+          physicianAvailability: req.body.physicianAvailability,
+          date: req.body.date,
+          phoneNumber: req.body.phoneNumber,
+          email: req.body.email,
+          doctor: req.body.doctor
+        }}, {new: true}
+    )
+      .then((patient) => {
+        if (patient)
+          console.log(patient);
+        else
+          console.log('No data exist for this ID');
+      })
+      .catch((err) => {
+        console.log(err);
+        res.status('400').send('ERROR')
+      })
+  } else {
+    console.log("Invalid Id")
+  }
+})
+
 module.exports = app;

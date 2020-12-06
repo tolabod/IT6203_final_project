@@ -1,0 +1,38 @@
+<div class="w-100 d-flex flex-column">
+
+  <div class="d-flex w-100 align-items-center justify-content-center mb-4">
+    <h4 class="h4 text-uppercase mb-4 text-danger font-weight-bold font-italic">delete Appointment</h4>
+  </div>
+
+  <table class="table w-100">
+    <thead>
+    <tr>
+      <th scope="col" class="text-capitalize">index</th>
+      <th scope="col" class="text-capitalize">first name</th>
+      <th scope="col" class="text-capitalize">last name</th>
+      <th scope="col" class="text-capitalize">email</th>
+      <th scope="col" class="text-capitalize">Phone</th>
+      <th scope="col" class="text-capitalize">date</th>
+      <th scope="col" class="text-capitalize">physician availability</th>
+      <th scope="col" class="text-capitalize">type</th>
+      <th scope="col" class="text-capitalize">duration</th>
+      <th scope="col" class="text-capitalize">Physician</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let appointmentItem of appointments let i = index">
+      <th scope="row">{{i + 1}}</th>
+      <td>{{appointmentItem.firstName}}</td>
+      <td>{{appointmentItem.lastName}}</td>
+      <td>{{appointmentItem.email}}</td>
+      <td>{{appointmentItem.phoneNumber}}</td>
+      <td>{{appointmentItem.date}}</td>
+      <td>{{appointmentItem.physicianAvailability}}</td>
+      <td>{{appointmentItem.type}}</td>
+      <td>{{appointmentItem.duration}}</td>
+      <td>{{appointmentItem.doctor}}</td>
+      <button class="btn btn-danger text-capitalize m-1" (click)="deleteAppointment(appointmentItem._id)">delete</button>
+    </tr>
+    </tbody>
+  </table>
+</div>

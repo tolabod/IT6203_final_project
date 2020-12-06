@@ -1,0 +1,77 @@
+<div class="d-flex align-items-center w-100 d-flex flex-column bg-transparent">
+  <form class="d-flex flex-column align-items-center w-100 bg-transparent" (ngSubmit)="addAppointment()">
+
+    <h4 class="h4 text-uppercase mb-4 text-success font-weight-bold font-italic">Add notification</h4>
+
+    <div class="form-group d-flex flex-row w-100 m-auto">
+      <div class="d-flex align-items-center w-50 m-auto flex-column" style="width: 45% !important;">
+        <label class="form-check-label" for="firstname">First Name:</label>
+        <input class="form-control" placeholder="First Name" type="text" id="firstname" [(ngModel)]="firstName" name="firstname" >
+      </div>
+
+      <div class="d-flex align-items-center m-auto flex-column" style="width: 45% !important;">
+        <label class="form-check-label" for="lastname">Last Name:</label>
+        <input class="form-control" placeholder="Last Name" type="text" id="lastname" [(ngModel)]="lastName" name="lastname">
+      </div>
+    </div>
+
+    <div class="form-group d-flex flex-row w-100 mt-5 ml-auto mr-auto mb-auto">
+      <div class="d-flex align-items-center w-50 m-auto flex-column" style="width: 45% !important;">
+        <label class="form-check-label" for="type">Appointment Type:</label>
+        <select class="form-control" name="type" id="type" [(ngModel)]="type">
+          <option value=" ">Please Select</option>
+          <option value="Check-up">Check-up</option>
+          <option value="Flu Shot">Flu Shot</option>
+          <option value="Corona Vaccine">Corona Vaccine</option>
+          <option value="Blood Work">Blood Work</option>
+          <option value="Anti Natal">Anti Natal</option>
+        </select>
+      </div>
+
+      <div class="d-flex align-items-center w-50 m-auto flex-column" style="width: 45% !important;">
+        <label class="form-check-label" for="physicianAvailability">Physician Availability:</label>
+        <select class="form-control" name="physicianAvailability" id="physicianAvailability" [(ngModel)]="physicianAvailability">
+          <option value=" ">Please Select</option>
+          <option value="true">Yes</option>
+          <option value="false">No</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="form-group d-flex flex-row w-100 mt-5 ml-auto mr-auto mb-auto">
+      <div class="d-flex align-items-center w-50 m-auto flex-column" style="width: 45% !important;">
+        <label class="form-check-label" for="duration">Duration:</label>
+        <input id="duration" class="form-control" name="duration" type="duration" [(ngModel)]="duration">
+      </div>
+
+      <div class="d-flex align-items-center w-50 m-auto flex-column" style="width: 45% !important;">
+        <label class="form-check-label" for="date">Appointment Date:</label>
+        <input id="date" class="form-control" name="date" type="date" [(ngModel)]="date">
+      </div>
+    </div>
+
+    <div class="form-group d-flex flex-row w-100 mt-5 ml-auto mr-auto mb-auto">
+      <div class="d-flex align-items-center w-50 m-auto flex-column" style="width: 45% !important;">
+        <label class="form-check-label" for="email">Email:</label>
+        <input class="form-control" placeholder="Email" type="text" id="email" [(ngModel)]="email" name="email">
+      </div>
+
+      <div class="d-flex align-items-center m-auto flex-column" style="width: 45% !important;">
+        <label class="form-check-label" for="phoneNumber">Phone Number:</label>
+        <input class="form-control" placeholder="1871891229" type="text" id="phoneNumber" [(ngModel)]="phoneNumber" name="phoneNumber">
+      </div>
+    </div>
+
+    <div class="form-group d-flex flex-row w-100 mt-5 ml-auto mr-auto mb-auto">
+      <div class="d-flex align-items-center m-auto flex-column w-100">
+        <label class="form-check-label" for="doctor">Doctors Name:</label>
+        <input class="form-control" placeholder="doctor" type="text" id="doctor" [(ngModel)]="doctor" name="doctor">
+      </div>
+    </div>
+
+    <div class="d-flex flex-row w-100 align-items-center justify-content-center">
+      <button class="btn btn-success text-uppercase mt-5" type="submit">submit notification</button>
+    </div>
+  </form>
+</div>
+

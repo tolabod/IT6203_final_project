@@ -1,0 +1,32 @@
+<div class="d-block w-100">
+  <div class="menu-container">
+
+    <!--    Grid Navigation-->
+    <div class="menu">
+      <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
+        <mat-icon>more_vert</mat-icon>
+      </button>
+      <mat-menu #menu="matMenu">
+        <button mat-menu-item routerLink="all">
+          <span class="text-capitalize text-info">Appointments</span>
+        </button>
+
+        <button mat-menu-item routerLink="add">
+          <span class="text-capitalize text-success">add Appointment</span>
+        </button>
+
+        <button mat-menu-item routerLink="update">
+          <span class="text-capitalize text-warning">update Appointment</span>
+        </button>
+
+        <button mat-menu-item routerLink="delete">
+          <span class="text-capitalize text-danger">delete Appointment</span>
+        </button>
+      </mat-menu>
+    </div>
+
+    <div class="content w-100">
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+</div>
