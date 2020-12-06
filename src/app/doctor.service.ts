@@ -46,6 +46,6 @@ export class DoctorService {
       .subscribe(() => {
         console.log('Updated: ' + doctorId);
       });
-    location.reload();
+    location.assign('doctor/update');
   }
 }

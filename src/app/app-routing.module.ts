@@ -12,6 +12,10 @@ import {AddDoctorComponent} from './add-doctor/add-doctor.component';
 import {FindDoctorComponent} from './find-doctor/find-doctor.component';
 import {DeleteDoctorComponent} from './delete-doctor/delete-doctor.component';
 import {AllDoctorsComponent} from './all-doctors/all-doctors.component';
+import {UpdateDoctorComponent} from './update-doctor/update-doctor.component';
+import {DoctorInfoUpdateComponent} from './doctor-info-update/doctor-info-update.component';
+import {NotificationComponent} from './notification/notification.component';
+import {AddNotificationComponent} from './add-notification/add-notification.component';
 
 const routes: Routes = [
   {path: 'prescription', component: PrescriptionComponent, children: [
@@ -29,6 +33,13 @@ const routes: Routes = [
       {path: 'find', component: FindDoctorComponent},
       {path: 'delete', component: DeleteDoctorComponent},
       {path: 'all', component: AllDoctorsComponent},
+      {path: 'update', component: UpdateDoctorComponent, children: [
+          {path: 'info/:_id', component: DoctorInfoUpdateComponent},
+        ]},
+    ]},
+
+  {path: 'notification', component: NotificationComponent, children: [
+      {path: 'add', component: AddNotificationComponent},
     ]},
 ];
 

@@ -3,7 +3,8 @@ const bodyParser = require('body-parser');
 const cors = require('cors')
 const app = express();
 const Patient = require('./Model/Patient');
-const Doctor = require('./Model/doctor')
+const Doctor = require('./Model/doctor');
+const Notification = require('./Model/notification');
 
 //Connect to MongoDB
 const mongoose = require('mongoose');
@@ -179,4 +180,78 @@ app.put( baseAPI + 'doctors/update/:id', (req, res, next) => {
   }
 });
 
+// DOCTOR END
+
+
+
+// NOTIFICATION START
+app.post(baseAPI + "notification/add", (req, res) => {
+  const notification = new Notification({
+    firstName: req.body.firstName,
+    lastName: req.body.lastName,
+    type: req.body.type,
+    enableNotification: req.body.enableNotification,
+    phoneNumber: req.body.phoneNumber,
+    email: req.body.email,
+    date: req.body.date,
+    doctor: req.body.doctor
+  });
+
+
+  notification.save()
+    .then(() => console.log('Successfully Added new Notification'))
+    .catch(err => console.log(err))
+});
+
+app.get(baseAPI + "notification/get", (req, res) => {
+  Notification.find()
+    //if data is returned, send data as a response
+    .then(data => res.status(200).json(data))
+    //if error, send internal server error
+    .catch(err => {
+      console.log('Error: ${err}');
+      res.status(500).json(err);
+    });
+});
+
+app.delete(baseAPI + 'notification/delete/:id', (req, res, next) => {
+  // console.log("AM HERE")
+  Notification.deleteOne({ _id: req.params.id })
+    .then(result => {
+      console.log(result);
+      res.status(200).json("Deleted!");
+    })
+})
+
+app.put(baseAPI + 'notification/update/:id', (req, res, next) => {
+  // Patient.update
+  console.log("ID:" + req.params.id)
+
+  if (mongoose.isValidObjectId(req.params.id)) {
+    Patient.findOneAndUpdate({_id: req.params.id},
+      {$set: {
+          firstName: req.body.firstName,
+          lastName: req.body.lastName,
+          type: req.body.type,
+          enableNotification: req.body.enableNotification,
+          phoneNumber: req.body.phoneNumber,
+          email: req.body.email,
+          doctor: req.body.doctor,
+          date: req.body.date
+        }}, {new: true}
+    )
+      .then((patient) => {
+        if (patient)
+          console.log(patient);
+        else
+          console.log('No data exist for this ID');
+      })
+      .catch((err) => {
+        console.log(err);
+        res.status('400').send('ERROR')
+      })
+  } else {
+    console.log("Invalid Id")
+  }
+})
 module.exports = app;

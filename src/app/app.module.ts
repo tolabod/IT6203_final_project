@@ -23,6 +23,12 @@ import {DoctorService} from './doctor.service';
 import { FindDoctorComponent } from './find-doctor/find-doctor.component';
 import { DeleteDoctorComponent } from './delete-doctor/delete-doctor.component';
 import { AllDoctorsComponent } from './all-doctors/all-doctors.component';
+import { UpdateDoctorComponent } from './update-doctor/update-doctor.component';
+import { DoctorInfoUpdateComponent } from './doctor-info-update/doctor-info-update.component';
+import { NotificationComponent } from './notification/notification.component';
+import { AddNotificationComponent } from './add-notification/add-notification.component';
+import {MatInputModule} from '@angular/material/input';
+import {NotificationService} from './notification.service';
 
 @NgModule({
   declarations: [
@@ -40,6 +46,10 @@ import { AllDoctorsComponent } from './all-doctors/all-doctors.component';
     FindDoctorComponent,
     DeleteDoctorComponent,
     AllDoctorsComponent,
+    UpdateDoctorComponent,
+    DoctorInfoUpdateComponent,
+    NotificationComponent,
+    AddNotificationComponent,
   ],
   imports: [
     BrowserModule,
@@ -49,11 +59,13 @@ import { AllDoctorsComponent } from './all-doctors/all-doctors.component';
     MatIconModule,
     MatButtonModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    MatInputModule,
   ],
   providers: [
     PrescriptionService,
     DoctorService,
+    NotificationService
   ],
   bootstrap: [AppComponent]
 })
