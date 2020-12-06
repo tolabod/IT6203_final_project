@@ -27,7 +27,6 @@ export class AddNotificationComponent implements OnInit {
 
   // tslint:disable-next-line:typedef
   addNotification() {
-    // console.log(this.enableNotification);
     // tslint:disable-next-line:max-line-length
     this.notificationService.addNotification(this.firstName, this.lastName, this.type, this.enableNotification, this.date, this.phoneNumber, this.email, this.doctor);
   }

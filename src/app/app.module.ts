@@ -29,6 +29,7 @@ import { NotificationComponent } from './notification/notification.component';
 import { AddNotificationComponent } from './add-notification/add-notification.component';
 import {MatInputModule} from '@angular/material/input';
 import {NotificationService} from './notification.service';
+import { AllNotificationComponent } from './all-notification/all-notification.component';
 
 @NgModule({
   declarations: [
@@ -50,6 +51,7 @@ import {NotificationService} from './notification.service';
     DoctorInfoUpdateComponent,
     NotificationComponent,
     AddNotificationComponent,
+    AllNotificationComponent,
   ],
   imports: [
     BrowserModule,
